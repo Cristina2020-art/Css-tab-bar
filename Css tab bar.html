@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Design by foolishdeveloper.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style media="screen">
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9fbff;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.nav {
+  background-color: white;
+  box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0 0 2rem 2rem;
+  overflow: hidden;
+  padding: 0.4rem;
+  width: 24rem;
+}
+.nav__list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav__listitem {
+  list-style: none;
+  padding: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+.nav__listitem::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  background-color: #f3e5f5;
+  display: block;
+  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 400ms cubic-bezier(0, 0.76, 0.58, 1.43);
+  transform: scale(0);
+  z-index: 1;
+}
+i.fas{
+  color: #767b91;
+  font-size: 25px;
+
+}
+.nav__listitem i.fas {
+  fill: #767b91;
+  width: 2rem;
+  transition: fill 400ms cubic-bezier(0, 0.76, 0.58, 1.43);
+  z-index: 99;
+  position: relative;
+}
+.nav__listitem:hover i.fas {
+  color: #aa00ff;
+}
+.nav__listitem-active i.fas {
+  color: #aa00ff;
+}
+.nav__listitem-active::before {
+  transform: scale(1);
+}
+  </style>
+
+</head>
+<body>
+    <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__listitem ">
+<i class="fas fa-home"></i>
+      </li>
+      <li class="nav__listitem nav__listitem-active">
+
+<i class="fas fa-heart"></i>
+
+      </li>
+      <li class="nav__listitem">
+
+<i class="fas fa-bookmark"></i>
+
+      </li>
+      <li class="nav__listitem">
+<i class="fas fa-cog"></i>
+
+      </li>
+    </ul>
+  </nav>
+<script type="text/javascript">
+let nav = document.querySelector(".nav");
+let navListItem = document.querySelectorAll(".nav__listitem");
+
+navListItem.forEach((link) => link.addEventListener("click", listActive));
+
+function listActive() {
+  navListItem.forEach((link) => link.classList.remove("nav__listitem-active"));
+  this.classList.add("nav__listitem-active");
+}
+
+
+</script>
+</body>
+</html>
